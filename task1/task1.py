@@ -10,10 +10,10 @@ def total_salary(path: str) -> str:
         string with salary data.
 
     Raises:
-        if path/data wrong returns an empty string.
+        if path/data wrong returns (0, 0).
     """
     if not path:
-        return ""
+        return (0, 0)
 
     try:
         # Open file and read data from it
@@ -27,9 +27,9 @@ def total_salary(path: str) -> str:
                 print("Wrong data in the file.")
                 return ""
             
-            salaries_sum = float("sum(salaries):.0f")
+            salaries_sum = float(f"{sum(salaries):.0f}")
             try:
-                average_salary = float("sum(salaries) / len(salaries):.0f")
+                average_salary = float(f"{sum(salaries) / len(salaries):.0f}")
             except ZeroDivisionError:
                 print("Can not divide by zero")
                 return (0, 0)
